@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let newStr = '';
+  for (let key in obj) {
+    newStr += obj[key]
+  }
+  return newStr;
 }
 
 
@@ -53,8 +57,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
-
+function greaterThan10(obj) {
+  for (let key in obj) {
+    if (obj[key] > 10) {
+      obj[key] = 0;
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -65,8 +75,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
-
+function double(obj) {
+  for (let key in obj) {
+    obj[key] *= 2;
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -79,8 +93,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
-
+function secrets(obj) {
+  let str = '';
+  for (let k in obj) {
+    if (k.startsWith('sh')) {
+      str += obj[k];
+    }
+  }
+  return str;
+}
 
 
 /* 
@@ -110,8 +131,10 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
-
+function removePassword(obj) {
+  delete obj.password;
+  return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -129,8 +152,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
-
+for (let k in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[k] > 100) {
+    delete deleteTheBigNumbers[k];
+  } else null;
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -142,8 +168,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
-
+function startsWithK(obj) {
+  for (let k in obj) {
+    if (k.startsWith('k')) {
+      delete obj[k];
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -157,6 +189,12 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
-
+function hiddenTreasure(obj) {
+  for (let k in obj) {
+    if (obj[k].includes('treasure') === false) {
+      delete obj[k];
+    }
+  }
+  return obj;
+}
 
